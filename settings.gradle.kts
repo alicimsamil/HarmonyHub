@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "HarmonyHub"
-include ':app'
+include(":app")
