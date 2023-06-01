@@ -1,7 +1,45 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.HarmonyHub" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_container</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Background color. -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/on_background</item>
+        <!-- Surface color. -->
+        <item name="colorSurface">@color/background</item>
+        <item name="colorOnSurface">@color/on_background</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <!-- Error color. -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+        <item name="colorErrorContainer">@color/error_container</item>
+        <item name="colorOnErrorContainer">@color/error_on_container</item>
+        <!-- Tertiary color. -->
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorOnTertiary">@color/on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/on_tertiary_container</item>
+        <!-- Outline color. -->
+        <item name="colorOutline">@color/outline</item>
+        <!-- Typography. -->
+        <item name="textAppearanceHeadline3">@style/TextAppearance.NoteApp.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.NoteApp.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.NoteApp.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.NoteApp.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.NoteApp.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.NoteApp.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.NoteApp.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.NoteApp.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.NoteApp.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.NoteApp.Caption</item>
     </style>
 </resources>
