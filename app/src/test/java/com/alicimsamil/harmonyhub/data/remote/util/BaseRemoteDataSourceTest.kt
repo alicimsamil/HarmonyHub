@@ -1,10 +1,9 @@
-package com.alicimsamil.harmonyhub.data.remote
+package com.alicimsamil.harmonyhub.data.remote.util
 
 import com.alicimsamil.harmonyhub.MainCoroutineRule
 import com.alicimsamil.harmonyhub.core.data.Error
 import com.alicimsamil.harmonyhub.core.data.Errors
 import com.alicimsamil.harmonyhub.core.data.Success
-import com.alicimsamil.harmonyhub.data.remote.util.BaseRemoteDataSource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import okhttp3.MediaType
