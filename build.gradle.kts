@@ -3,4 +3,5 @@ plugins {
     id (ClassPaths.androidApplicationPath) version Versions.androidApplicationPathVersion apply false
     id (ClassPaths.androidLibraryPath) version Versions.androidLibraryPathVersion apply false
     id (ClassPaths.kotlinGradlePath) version Versions.kotlinGradleVersion apply false
+    id(ClassPaths.navigationPath) version Versions.navVersion apply false
 }
