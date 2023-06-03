@@ -15,5 +15,10 @@ object Versions {
     const val testJunitVersion = "4.13.2"
     const val testExtJunitVersion = "1.1.5"
     const val testEspressoVersion = "3.5.1"
+    const val retrofit = "2.9.0"
+    const val viewModelVersion = "2.6.1"
+    const val activityVersion = "1.7.1"
+    const val navVersion = "2.5.3"
+    const val coroutinesVersion = "1.7.0"
 
 }
