@@ -1,7 +1,7 @@
 package com.alicimsamil.harmonyhub.core.presentation
 
+import android.app.AlertDialog
 import android.os.Bundle
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.google.android.material.snackbar.Snackbar
+import com.alicimsamil.harmonyhub.R
+import com.alicimsamil.harmonyhub.core.common.extensions.EMPTY
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -28,6 +29,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(private val in
 
     private var _binding: VB? = null
     protected val binding get() = _binding!!
+
+    var isErrorMessageShowing = false
 
     private lateinit var constraintLayout: ConstraintLayout
 
@@ -56,16 +59,15 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(private val in
      * This function handles the change of failure value in states.
      */
     protected fun handleFailure() {
-        view?.let { itView ->
-            if (state.error.isNotEmpty()) {
-                val value = TypedValue()
-                context?.theme?.resolveAttribute(androidx.appcompat.R.attr.colorError, value, true)
-                Snackbar
-                    .make(itView, state.error, Snackbar.LENGTH_LONG)
-                    .setBackgroundTint(value.data)
+        if (state.error.isNotEmpty()) {
+            if (!isErrorMessageShowing) {
+                AlertDialog.Builder(context)
+                    .setTitle(getString(R.string.error))
+                    .setMessage(state.error)
+                    .create()
                     .show()
-                state.error = ""
             }
+            state.error = String.EMPTY
         }
     }
 
@@ -87,7 +89,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(private val in
      * This function takes an id and bundle parameter and redirect with navigation component
      * according to these parameters.
      */
-    protected fun navigate(id: Int, bundle: Bundle? = null){
+    protected fun navigate(id: Int, bundle: Bundle? = null) {
         bundle?.let {
             findNavController().navigate(id, bundle)
         } ?: run {
