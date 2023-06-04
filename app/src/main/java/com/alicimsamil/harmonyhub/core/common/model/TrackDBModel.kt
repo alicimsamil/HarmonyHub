@@ -48,7 +48,7 @@ data class TrackDBModel(
     @ColumnInfo(name = "trackRentalPrice")
     val trackRentalPrice: Double?,
     @ColumnInfo(name = "trackTimeMillis")
-    val trackTimeMillis: Int?,
+    val trackTimeMillis: Long?,
     @ColumnInfo(name = "wrapperType")
     val wrapperType: String?,
     @PrimaryKey(autoGenerate = true)

@@ -41,7 +41,7 @@ data class TrackModel(
     val trackNumber: Int?,
     val trackPrice: Double?,
     val trackRentalPrice: Double?,
-    val trackTimeMillis: Int?,
+    val trackTimeMillis: Long?,
     val trackViewUrl: String?,
     val wrapperType: String?
 )
