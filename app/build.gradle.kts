@@ -1,9 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs.kotlin")
-    kotlin("kapt")
 }
 
 android {
@@ -95,6 +95,7 @@ dependencies {
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
     debugImplementation(Dependencies.debugLibraries)
+    annotationProcessor(Dependencies.annotationLibraries)
     kapt(Dependencies.kaptLibraries)
 }
 
