@@ -19,5 +19,4 @@ interface TracksRepository {
     suspend fun getTrackById(id: Int): DataResult<TrackDBModel, String>
 
     fun getLocalTracksWithPaging() : Flow<PagingData<TrackDBModel>>
-
 }
