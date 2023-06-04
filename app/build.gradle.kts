@@ -95,8 +95,7 @@ dependencies {
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
     debugImplementation(Dependencies.debugLibraries)
-    releaseImplementation ("com.github.chuckerteam.chucker:library-no-op:3.5.2")
-
+    releaseImplementation (Dependencies.releaseLibraries)
     kapt(Dependencies.kaptLibraries)
     annotationProcessor(Dependencies.annotationLibraries)
 }

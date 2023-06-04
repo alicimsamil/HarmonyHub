@@ -43,6 +43,7 @@ object Dependencies {
 
     //Chucker
     private const val chuckerLib = "com.github.chuckerteam.chucker:library:${Versions.chuckerVersion}"
+    private const val chuckerReleaseLib = "com.github.chuckerteam.chucker:library-no-op:${Versions.chuckerVersion}"
 
     //test
     private const val testJUnitLib = "junit:junit:${Versions.testJunitVersion}"
@@ -83,6 +84,10 @@ object Dependencies {
 
     val debugLibraries = arrayListOf<String>().apply {
         add(chuckerLib)
+    }
+
+    val releaseLibraries = arrayListOf<String>().apply {
+        add(chuckerReleaseLib)
     }
 
     val kaptLibraries = arrayListOf<String>().apply {

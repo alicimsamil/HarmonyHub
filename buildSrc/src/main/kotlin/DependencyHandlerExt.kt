@@ -37,6 +37,15 @@ fun DependencyHandler.debugImplementation(list: List<String>?) {
 }
 
 /**
+ * This function adds releaseImplementation dependencies sequentially.
+ */
+fun DependencyHandler.releaseImplementation(list: List<String>?) {
+    list?.forEach { dependency ->
+        add("releaseImplementation", dependency)
+    }
+}
+
+/**
  * This function adds annotationProcessor dependencies sequentially.
  */
 fun DependencyHandler.annotationProcessor(list: List<String>) {
