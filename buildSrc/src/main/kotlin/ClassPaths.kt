@@ -6,4 +6,5 @@ object ClassPaths {
     const val androidLibraryPath = "com.android.library"
     const val androidApplicationPath = "com.android.application"
     const val navigationPath = "androidx.navigation.safeargs"
+    const val hiltPath = "com.google.dagger.hilt.android"
 }

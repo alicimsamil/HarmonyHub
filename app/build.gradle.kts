@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
 }
 
 android {
@@ -36,7 +39,7 @@ android {
             buildConfigField(
                 "String",
                 "SERVICE_URL",
-                "\"https://itunes.apple.com/\""
+                "\"https://itunes.apple.com\""
             )
         }
 
@@ -57,7 +60,7 @@ android {
             buildConfigField(
                 "String",
                 "SERVICE_URL",
-                "\"https://itunes.apple.com/\""
+                "\"https://itunes.apple.com\""
             )
         }
     }
@@ -78,12 +81,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -91,4 +94,11 @@ dependencies {
     implementation(Dependencies.appLibraries)
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
+    debugImplementation(Dependencies.debugLibraries)
+    annotationProcessor(Dependencies.annotationLibraries)
+    kapt(Dependencies.kaptLibraries)
+}
+
+kapt {
+    correctErrorTypes = true
 }
