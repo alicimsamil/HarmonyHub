@@ -3,8 +3,8 @@
  */
 object Versions {
     //Paths
-    const val androidApplicationPathVersion = "8.0.1"
-    const val androidLibraryPathVersion = "8.0.1"
+    const val androidApplicationPathVersion = "7.2.2"
+    const val androidLibraryPathVersion = "7.2.2"
     const val hiltLibraryVersion = "2.44"
 
     //Dependencies
