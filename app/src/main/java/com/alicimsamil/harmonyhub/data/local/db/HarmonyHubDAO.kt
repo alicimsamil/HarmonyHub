@@ -20,6 +20,6 @@ interface HarmonyHubDAO {
     @Query("SELECT * FROM $TABLE_NAME")
     fun getAllTracks(): PagingSource<Int, TrackDBModel>
 
-    @Query("SELECT * FROM $TABLE_NAME WHERE id = :id")
+    @Query("SELECT * FROM $TABLE_NAME WHERE trackId = :id")
     suspend fun getTrackById(id: Int): TrackDBModel
 }
