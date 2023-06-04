@@ -45,6 +45,9 @@ object Dependencies {
     private const val chuckerLib = "com.github.chuckerteam.chucker:library:${Versions.chuckerVersion}"
     private const val chuckerReleaseLib = "com.github.chuckerteam.chucker:library-no-op:${Versions.chuckerVersion}"
 
+    //Splash Screen
+    private const val splashScreenLib = "androidx.core:core-splashscreen:${Versions.splashScreenVersion}"
+
     //test
     private const val testJUnitLib = "junit:junit:${Versions.testJunitVersion}"
     private const val testExtJUnitLib = "androidx.test.ext:junit:${Versions.testExtJunitVersion}"
@@ -70,6 +73,7 @@ object Dependencies {
         add(pagingRuntimeLib)
         add(okHttpLib)
         add(okHttpInterceptorLib)
+        add(splashScreenLib)
     }
 
     val testLibraries = arrayListOf<String>().apply {
