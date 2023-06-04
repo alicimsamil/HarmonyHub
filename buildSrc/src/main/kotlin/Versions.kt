@@ -25,5 +25,6 @@ object Versions {
     const val pagingVersion = "3.1.1"
     const val okHttpVersion = "4.9.0"
     const val chuckerVersion = "3.5.2"
+    const val splashScreenVersion = "1.0.1"
 
 }
