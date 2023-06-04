@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NavigateButton">
+        <attr name="customIcon" format="reference" />
+        <attr name="customBackgroundColor" format="color" />
+    </declare-styleable>
+</resources>
