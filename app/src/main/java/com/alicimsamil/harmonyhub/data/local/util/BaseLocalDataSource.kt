@@ -4,9 +4,9 @@ import android.database.StaleDataException
 import android.database.sqlite.SQLiteException
 import android.os.DeadObjectException
 import com.alicimsamil.harmonyhub.BuildConfig
-import com.alicimsamil.harmonyhub.core.data.DataResult
-import com.alicimsamil.harmonyhub.core.data.Success
-import com.alicimsamil.harmonyhub.core.data.Error
+import com.alicimsamil.harmonyhub.core.common.util.DataResult
+import com.alicimsamil.harmonyhub.core.common.util.Success
+import com.alicimsamil.harmonyhub.core.common.util.Error
 import com.alicimsamil.harmonyhub.core.data.Errors
 
 /**
