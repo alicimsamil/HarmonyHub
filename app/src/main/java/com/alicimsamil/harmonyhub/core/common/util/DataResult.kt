@@ -1,4 +1,4 @@
-package com.alicimsamil.harmonyhub.core.data
+package com.alicimsamil.harmonyhub.core.common.util
 
 /**
  * This class has been written for convenience

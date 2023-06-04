@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -36,7 +39,7 @@ android {
             buildConfigField(
                 "String",
                 "SERVICE_URL",
-                "\"https://itunes.apple.com/\""
+                "\"https://itunes.apple.com\""
             )
         }
 
@@ -57,7 +60,7 @@ android {
             buildConfigField(
                 "String",
                 "SERVICE_URL",
-                "\"https://itunes.apple.com/\""
+                "\"https://itunes.apple.com\""
             )
         }
     }
@@ -91,4 +94,12 @@ dependencies {
     implementation(Dependencies.appLibraries)
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
+    debugImplementation(Dependencies.debugLibraries)
+    releaseImplementation (Dependencies.releaseLibraries)
+    kapt(Dependencies.kaptLibraries)
+    annotationProcessor(Dependencies.annotationLibraries)
+}
+
+kapt {
+    correctErrorTypes = true
 }

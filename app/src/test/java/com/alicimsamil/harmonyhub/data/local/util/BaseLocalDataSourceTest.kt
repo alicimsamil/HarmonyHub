@@ -4,8 +4,8 @@ import android.database.StaleDataException
 import android.database.sqlite.SQLiteException
 import com.alicimsamil.harmonyhub.MainCoroutineRule
 import com.alicimsamil.harmonyhub.core.data.Errors
-import com.alicimsamil.harmonyhub.core.data.Success
-import com.alicimsamil.harmonyhub.core.data.Error
+import com.alicimsamil.harmonyhub.core.common.util.Success
+import com.alicimsamil.harmonyhub.core.common.util.Error
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi

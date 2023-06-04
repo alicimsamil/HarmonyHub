@@ -3,8 +3,9 @@
  */
 object Versions {
     //Paths
-    const val androidApplicationPathVersion = "8.0.1"
-    const val androidLibraryPathVersion = "8.0.1"
+    const val androidApplicationPathVersion = "7.2.2"
+    const val androidLibraryPathVersion = "7.2.2"
+    const val hiltLibraryVersion = "2.44"
 
     //Dependencies
     const val kotlinGradleVersion = "1.8.20"
@@ -20,5 +21,9 @@ object Versions {
     const val activityVersion = "1.7.1"
     const val navVersion = "2.5.3"
     const val coroutinesVersion = "1.7.0"
+    const val roomVersion = "2.5.1"
+    const val pagingVersion = "3.1.1"
+    const val okHttpVersion = "4.9.0"
+    const val chuckerVersion = "3.5.2"
 
 }
