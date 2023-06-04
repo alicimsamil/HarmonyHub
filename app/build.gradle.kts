@@ -95,7 +95,6 @@ dependencies {
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
     debugImplementation(Dependencies.debugLibraries)
-    annotationProcessor(Dependencies.annotationLibraries)
     kapt(Dependencies.kaptLibraries)
 }
 

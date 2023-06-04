@@ -89,8 +89,4 @@ object Dependencies {
         add(hiltCompilerKaptLib)
         add(roomCompilerLib)
     }
-
-    val annotationLibraries = arrayListOf<String>().apply {
-        add(roomCompilerLib)
-    }
 }
