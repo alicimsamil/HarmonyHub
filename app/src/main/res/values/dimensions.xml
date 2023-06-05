@@ -12,10 +12,15 @@
     //Spacing
     <dimen name="space_huge">150dp</dimen>
     <dimen name="space_very_big">90dp</dimen>
+    <dimen name="space_big">75dp</dimen>
     <dimen name="space_big_small">30dp</dimen>
     <dimen name="space_medium">20dp</dimen>
     <dimen name="space_medium_small">15dp</dimen>
     <dimen name="space_small">10dp</dimen>
     <dimen name="space_small_small">8dp</dimen>
     <dimen name="space_extra_small">5dp</dimen>
+
+    //Size
+    <dimen name="size_huge">120dp</dimen>
+    <dimen name="size_big">50dp</dimen>
 </resources>

@@ -31,9 +31,8 @@ class MainViewModel @Inject constructor(private val getAndSaveTracksUseCase: Get
                     state.value = state.value.copy(splashAnimationState = false)
                 }
                 .onFailure {
-                    state.value = state.value.copy(error = it ?: String.EMPTY)
                     delay(750.milliseconds)
-                    state.value = state.value.copy(splashAnimationState = false)
+                    state.value = state.value.copy(splashAnimationState = false, error = it ?: String.EMPTY)
                 }
         }
     }
