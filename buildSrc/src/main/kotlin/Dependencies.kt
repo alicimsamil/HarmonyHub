@@ -50,8 +50,6 @@ object Dependencies {
 
     //Glide
     private const val glideLib ="com.github.bumptech.glide:glide:${Versions.glideVersion}"
-
-    //
     private const val swipeToRefreshLib =  "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeToRefreshVersion}"
 
     //test

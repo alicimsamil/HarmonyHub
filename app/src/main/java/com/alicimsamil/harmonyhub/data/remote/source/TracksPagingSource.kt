@@ -2,6 +2,7 @@ package com.alicimsamil.harmonyhub.data.remote.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.alicimsamil.harmonyhub.BuildConfig
 import com.alicimsamil.harmonyhub.core.common.model.TrackModel
 import com.alicimsamil.harmonyhub.data.remote.service.HarmonyHubService
 import retrofit2.HttpException
@@ -22,7 +23,7 @@ class TracksPagingSource @Inject constructor(private val harmonyHubService: Harm
         return try {
             val nextPageNumber = params.key ?: 0
             val response =
-                harmonyHubService.getAllTracks("jack+jackson", params.key ?: 0)
+                harmonyHubService.getAllTracks(BuildConfig.SEARCH_KEYWORD, params.key ?: 0)
             LoadResult.Page(
                 data = response.results!!,
                 prevKey = null,

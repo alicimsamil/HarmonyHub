@@ -14,11 +14,24 @@ import com.alicimsamil.harmonyhub.databinding.ThirdScreenItemBinding
 import com.alicimsamil.harmonyhub.presentation.model.AdapterTypeEnum
 import com.alicimsamil.harmonyhub.presentation.model.ListingModel
 
-interface InteractWithItem{
+interface DeleteItemInterface {
     fun delete(id: Int)
 }
 
-class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: InteractWithItem? = null) :
+interface NavigateItemInterface {
+    fun go(id: Int)
+}
+
+interface NavigateItemWithDataModelInterface {
+    fun go(model: ListingModel)
+}
+
+class TracksAdapter(
+    diffCallback: NoteComparator,
+    val navigateItemInterface: NavigateItemInterface? = null,
+    val deleteItemInterface: DeleteItemInterface? = null,
+    val navigateItemWithDataModelInterface: NavigateItemWithDataModelInterface? = null
+) :
     PagingDataAdapter<ListingModel, RecyclerView.ViewHolder>(diffCallback) {
 
     var context: Context? = null
@@ -71,7 +84,7 @@ class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: Interact
         parent: ViewGroup,
         viewType: Int
     ): RecyclerView.ViewHolder {
-        context=parent.context
+        context = parent.context
         return when (viewType) {
             ITEM_TYPE_FIRST -> {
                 FirstScreenViewHolder(
@@ -124,8 +137,11 @@ class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: Interact
                 noteModel?.let {
                     tvArtistName.text = it.artistName
                     tvTrackName.text = it.trackName
-                    context?.let {context->
+                    context?.let { context ->
                         ivTrackImage.loadUrl(it.image, context)
+                        root.setOnClickListener { view ->
+                            navigateItemWithDataModelInterface?.go(noteModel)
+                        }
                     }
                 }
             }
@@ -139,6 +155,11 @@ class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: Interact
                 noteModel?.let {
                     tvArtistName.text = it.artistName
                     tvTrackName.text = it.trackName
+                    root.setOnClickListener { view ->
+                        it.trackId?.let { id ->
+                            navigateItemInterface?.go(id)
+                        }
+                    }
                 }
             }
         }
@@ -151,6 +172,11 @@ class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: Interact
                 noteModel?.let {
                     tvArtistName.text = it.artistName
                     tvTrackName.text = it.trackName
+                    root.setOnClickListener { view ->
+                        it.trackId?.let { id ->
+                            navigateItemInterface?.go(id)
+                        }
+                    }
                 }
             }
         }
@@ -165,12 +191,17 @@ class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: Interact
                     tvTrackName.text = it.trackName
                     tvReleaseName.text = it.releaseDate
                     tvTrackPrice.text = it.price
-                    context?.let {context->
+                    context?.let { context ->
                         ivTrackImage.loadUrl(it.image, context)
                     }
-                    ivDelete.setOnClickListener {view->
-                        it.trackId?.let { id->
-                            interactWithItem?.delete(id)
+                    ivDelete.setOnClickListener { view ->
+                        it.trackId?.let { id ->
+                            deleteItemInterface?.delete(id)
+                        }
+                    }
+                    root.setOnClickListener { view ->
+                        it.trackId?.let { id ->
+                            navigateItemInterface?.go(id)
                         }
                     }
                 }

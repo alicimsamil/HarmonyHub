@@ -1,13 +1,15 @@
 package com.alicimsamil.harmonyhub.presentation.screens.fourthscreen
 
 import android.app.AlertDialog
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.alicimsamil.harmonyhub.R
 import com.alicimsamil.harmonyhub.core.presentation.BaseFragment
-import com.alicimsamil.harmonyhub.core.presentation.InteractWithItem
+import com.alicimsamil.harmonyhub.core.presentation.DeleteItemInterface
+import com.alicimsamil.harmonyhub.core.presentation.NavigateItemInterface
 import com.alicimsamil.harmonyhub.databinding.FragmentFourthBinding
 import com.alicimsamil.harmonyhub.core.presentation.TracksAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +18,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FourthFragment :
-    BaseFragment<FragmentFourthBinding, FourthViewModel>(FragmentFourthBinding::inflate) {
+    BaseFragment<FragmentFourthBinding, FourthViewModel>(FragmentFourthBinding::inflate), NavigateItemInterface, DeleteItemInterface {
     override val viewModel by viewModels<FourthViewModel>()
     override var state = FourthScreenUiState()
 
@@ -46,11 +48,7 @@ class FourthFragment :
     }
 
     private fun setRecyclerAdapter() {
-        pagingAdapter = TracksAdapter(TracksAdapter.NoteComparator, object : InteractWithItem {
-            override fun delete(id: Int) {
-                viewModel.onEvent(FourthScreenUiEvent.DeleteTrack(id))
-            }
-        })
+        pagingAdapter = TracksAdapter(TracksAdapter.NoteComparator, navigateItemInterface = this, deleteItemInterface = this)
         binding.rvFourth.adapter = pagingAdapter
     }
 
@@ -69,5 +67,13 @@ class FourthFragment :
                 }
             }
         }
+    }
+
+    override fun delete(id: Int) {
+        viewModel.onEvent(FourthScreenUiEvent.DeleteTrack(id))
+    }
+
+    override fun go(id: Int) {
+        navigate(R.id.action_fourthFragment_to_detailFragment, bundle = bundleOf("id" to id))
     }
 }

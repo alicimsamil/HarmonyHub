@@ -4,16 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.alicimsamil.harmonyhub.R
+import com.alicimsamil.harmonyhub.core.common.extensions.gone
+import com.alicimsamil.harmonyhub.core.common.extensions.visible
 import com.alicimsamil.harmonyhub.databinding.ActivityMainBinding
-import com.alicimsamil.harmonyhub.presentation.screens.firstscreen.FirstFragment
-import com.alicimsamil.harmonyhub.presentation.screens.fourthscreen.FourthFragment
-import com.alicimsamil.harmonyhub.presentation.screens.secondscreen.SecondFragment
-import com.alicimsamil.harmonyhub.presentation.screens.thirdscreen.ThirdFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -48,29 +47,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavigation() {
-        val firstFragment = FirstFragment()
-        val secondFragment = SecondFragment()
-        val thirdFragment = ThirdFragment()
-        val fourthFragment = FourthFragment()
-
-        setCurrentFragment(firstFragment)
-
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.page_1 -> setCurrentFragment(firstFragment)
-                R.id.page_2 -> setCurrentFragment(secondFragment)
-                R.id.page_3 -> setCurrentFragment(thirdFragment)
-                R.id.page_4 -> setCurrentFragment(fourthFragment)
-            }
-            true
-        }
+        val navController = this.findNavController(R.id.nav_host_fragment)
+        binding.bottomNavigationView.setupWithNavController(navController)
     }
 
+    fun hideToolbar(){
+        binding.clToolbar.root.gone()
+    }
 
-    private fun setCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            addToBackStack(null)
-            replace(R.id.flFragment, fragment)
-            commit()
-        }
+    fun showToolbar(){
+        binding.clToolbar.root.visible()
+    }
+
 }
