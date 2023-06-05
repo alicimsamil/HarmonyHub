@@ -1,5 +1,5 @@
 ## Key Features
-- Allows you to view tracks
+- Allows you to view tracks.
 - You can listen to previews of the tracks.
 - You can use it in day or night mode thanks to the correctly defined theme.
 
