@@ -32,16 +32,17 @@ The project is divided into the following layers:
 
 ## Screenshots
 
-https://github.com/alicimsamil/HarmonyHub/assets/81926983/8c7be63a-b6d8-4f66-8914-070435b13f42
 
-https://github.com/alicimsamil/HarmonyHub/assets/81926983/a573f167-0708-4693-90d3-71b84d42d268
-
-https://github.com/alicimsamil/HarmonyHub/assets/81926983/2a3eb76c-97b5-4fd6-91c6-31d4d2c5daaa
-
-https://github.com/alicimsamil/HarmonyHub/assets/81926983/eb0af6fc-0519-4a5d-9b58-2c7fb1ce5905
+https://github.com/alicimsamil/HarmonyHub/assets/81926983/a562fcbe-7f43-456a-be89-b456bc2eb5e3
 
 
-![Screenshot 2023-06-05 at 15 05 47](https://github.com/alicimsamil/HarmonyHub/assets/81926983/2cbf1e62-5f57-4fdf-81f6-8a1fcc3a8f86)
-![Screenshot 2023-06-05 at 15 24 50](https://github.com/alicimsamil/HarmonyHub/assets/81926983/62132bca-1b19-40c4-bae4-6be866a85b7f)
+https://github.com/alicimsamil/HarmonyHub/assets/81926983/17fc8330-68cf-4094-9f8f-f370a5ad11d6
 
 
+https://github.com/alicimsamil/HarmonyHub/assets/81926983/6987b8a1-18e0-4360-b232-0220e8a37fb0
+
+
+https://github.com/alicimsamil/HarmonyHub/assets/81926983/2bc37db4-4773-4e9f-a64d-1594dfa49a8e
+
+![Screenshot 2023-06-05 at 15 24 50](https://github.com/alicimsamil/HarmonyHub/assets/81926983/2755042f-ca63-4220-b9c6-a6763790caae)
+![Screenshot 2023-06-05 at 15 05 47](https://github.com/alicimsamil/HarmonyHub/assets/81926983/939ed13f-e739-4c81-95a9-765295db62b6)
