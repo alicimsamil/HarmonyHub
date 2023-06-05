@@ -1,4 +1,4 @@
-package com.alicimsamil.harmonyhub.presentation.main
+package com.alicimsamil.harmonyhub.presentation.screens.main
 
 import android.animation.ObjectAnimator
 import android.os.Build

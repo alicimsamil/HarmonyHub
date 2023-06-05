@@ -1,5 +1,9 @@
 package com.alicimsamil.harmonyhub.presentation.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ListingModel(
     val trackId: Int?,
     val artistName: String?,
@@ -11,5 +15,6 @@ data class ListingModel(
     val image: String?,
     val releaseDate: String? = null,
     val previewUrl: String? = null,
-    val trackTimeMillis: String? = null
-)
+    val trackTimeMillis: String? = null,
+    val type: AdapterTypeEnum? = null
+) : Parcelable

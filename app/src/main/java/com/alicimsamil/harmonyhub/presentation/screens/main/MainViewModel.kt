@@ -1,6 +1,7 @@
-package com.alicimsamil.harmonyhub.presentation.main
+package com.alicimsamil.harmonyhub.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
+import com.alicimsamil.harmonyhub.BuildConfig
 import com.alicimsamil.harmonyhub.core.common.extensions.EMPTY
 import com.alicimsamil.harmonyhub.core.presentation.BaseViewModel
 import com.alicimsamil.harmonyhub.core.presentation.UiEvent
@@ -25,7 +26,7 @@ class MainViewModel @Inject constructor(private val getAndSaveTracksUseCase: Get
 
     private fun getSplashAnimationState() {
         viewModelScope.launch {
-            getAndSaveTracksUseCase.invoke("jack+johnson")
+            getAndSaveTracksUseCase.invoke(BuildConfig.SEARCH_KEYWORD)
                 .onSuccess {
                     delay(750.milliseconds)
                     state.value = state.value.copy(splashAnimationState = false)

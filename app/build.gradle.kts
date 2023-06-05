@@ -4,6 +4,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -41,6 +42,11 @@ android {
                 "SERVICE_URL",
                 "\"https://itunes.apple.com\""
             )
+            buildConfigField(
+                "String",
+                "SEARCH_KEYWORD",
+                "\"jack+johnson\""
+            )
         }
 
         create("prod"){
@@ -61,6 +67,11 @@ android {
                 "String",
                 "SERVICE_URL",
                 "\"https://itunes.apple.com\""
+            )
+            buildConfigField(
+                "String",
+                "SEARCH_KEYWORD",
+                "\"jack+johnson\""
             )
         }
     }

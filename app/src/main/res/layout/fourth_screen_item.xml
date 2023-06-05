@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/space_big_small"
     android:paddingVertical="5dp">
 
@@ -22,13 +22,24 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cancel_48px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/space_extra_small"
+                android:layout_marginEnd="@dimen/space_extra_small"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivTrackImage"
                 android:layout_width="@dimen/size_huge"
                 android:layout_height="@dimen/size_huge"
                 android:layout_marginTop="@dimen/space_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvArtistName"
@@ -36,6 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_medium"
                 android:layout_marginTop="@dimen/space_big_small"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintBottom_toTopOf="@id/tvTrackName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_medium"
                 android:layout_marginTop="@dimen/space_medium_small"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintBottom_toTopOf="@id/tvReleaseName"
                 app:layout_constraintEnd_toEndOf="parent"

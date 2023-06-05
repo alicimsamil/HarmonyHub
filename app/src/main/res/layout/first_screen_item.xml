@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivTrackImage"
                 android:layout_width="@dimen/size_big"
                 android:layout_height="@dimen/size_big"
@@ -29,7 +29,9 @@
                 android:layout_marginStart="@dimen/space_medium_small"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvArtistName"
@@ -37,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_medium_small"
                 android:layout_marginEnd="@dimen/space_medium_small"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintBottom_toTopOf="@id/tvTrackName"
                 app:layout_constraintEnd_toStartOf="@id/btnNavigate"
@@ -51,6 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_small_small"
                 android:layout_marginEnd="@dimen/space_medium_small"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintBottom_toBottomOf="@id/btnNavigate"
                 app:layout_constraintEnd_toStartOf="@id/btnNavigate"

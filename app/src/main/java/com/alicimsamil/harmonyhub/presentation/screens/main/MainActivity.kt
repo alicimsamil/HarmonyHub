@@ -1,4 +1,4 @@
-package com.alicimsamil.harmonyhub.presentation.main
+package com.alicimsamil.harmonyhub.presentation.screens.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,12 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.alicimsamil.harmonyhub.R
+import com.alicimsamil.harmonyhub.core.common.extensions.gone
+import com.alicimsamil.harmonyhub.core.common.extensions.visible
+import com.alicimsamil.harmonyhub.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -16,7 +21,8 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel>()
 
-    private var state : MainUiState = MainUiState()
+    private var state: MainUiState = MainUiState()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +30,10 @@ class MainActivity : AppCompatActivity() {
             state.splashAnimationState
         }
         splashScreenAnimationExitListener()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         observeUiState()
-        setContentView(R.layout.activity_main)
+        initBottomNavigation()
     }
 
     private fun observeUiState() {
@@ -37,4 +45,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun initBottomNavigation() {
+        val navController = this.findNavController(R.id.nav_host_fragment)
+        binding.bottomNavigationView.setupWithNavController(navController)
+    }
+
+    fun hideToolbar(){
+        binding.clToolbar.root.gone()
+    }
+
+    fun showToolbar(){
+        binding.clToolbar.root.visible()
+    }
+
 }

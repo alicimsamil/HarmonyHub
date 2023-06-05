@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.alicimsamil.harmonyhub.R
 import com.alicimsamil.harmonyhub.core.common.extensions.EMPTY
+import com.alicimsamil.harmonyhub.presentation.screens.main.MainActivity
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
