@@ -20,7 +20,7 @@ class TracksPagingSource @Inject constructor(private val harmonyHubService: Harm
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TrackModel> {
         return try {
-            val nextPageNumber = params.key ?: 1
+            val nextPageNumber = params.key ?: 0
             val response =
                 harmonyHubService.getAllTracks("jack+jackson", params.key ?: 0)
             LoadResult.Page(
