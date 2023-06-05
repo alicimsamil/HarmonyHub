@@ -48,6 +48,12 @@ object Dependencies {
     //Splash Screen
     private const val splashScreenLib = "androidx.core:core-splashscreen:${Versions.splashScreenVersion}"
 
+    //Glide
+    private const val glideLib ="com.github.bumptech.glide:glide:${Versions.glideVersion}"
+
+    //
+    private const val swipeToRefreshLib =  "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeToRefreshVersion}"
+
     //test
     private const val testJUnitLib = "junit:junit:${Versions.testJunitVersion}"
     private const val testExtJUnitLib = "androidx.test.ext:junit:${Versions.testExtJunitVersion}"
@@ -74,6 +80,8 @@ object Dependencies {
         add(okHttpLib)
         add(okHttpInterceptorLib)
         add(splashScreenLib)
+        add(glideLib)
+        add(swipeToRefreshLib)
     }
 
     val testLibraries = arrayListOf<String>().apply {

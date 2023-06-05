@@ -13,11 +13,11 @@
         android:label="${appName}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HarmonyHub"
+        android:theme="@style/Theme.HarmonyHub.Splash"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.main.MainActivity"
-            android:theme="@style/Theme.HarmonyHub.Splash"
+            android:name=".presentation.screens.main.MainActivity"
+            android:theme="@style/Theme.HarmonyHub"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
