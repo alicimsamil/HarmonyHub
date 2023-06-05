@@ -21,6 +21,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cancel_48px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/space_extra_small"
+                android:layout_marginEnd="@dimen/space_extra_small"/>
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivTrackImage"
                 android:layout_width="@dimen/size_huge"
