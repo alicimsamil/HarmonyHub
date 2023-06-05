@@ -11,5 +11,6 @@ data class ListingModel(
     val image: String?,
     val releaseDate: String? = null,
     val previewUrl: String? = null,
-    val trackTimeMillis: String? = null
+    val trackTimeMillis: String? = null,
+    val type: AdapterTypeEnum? = null
 )
