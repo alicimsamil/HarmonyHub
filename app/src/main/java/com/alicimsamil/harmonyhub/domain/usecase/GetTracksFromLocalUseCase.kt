@@ -19,12 +19,13 @@ class GetTracksFromLocalUseCase @Inject constructor(private val repository: Trac
             return ListingModel(
                 trackId = trackId,
                 artistName = artistName,
-                price = "$trackPrice $currency",
+                price = "${trackPrice ?: 0} $currency",
                 kind = kind,
                 primaryGenreName = primaryGenreName,
                 trackName = trackName,
                 collectionName = collectionName,
-                image = artworkUrl100
+                image = artworkUrl100,
+                releaseDate = releaseDate
             )
         }
     }

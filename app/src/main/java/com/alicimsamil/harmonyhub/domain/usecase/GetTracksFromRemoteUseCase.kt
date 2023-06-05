@@ -20,7 +20,7 @@ class GetTracksFromRemoteUseCase @Inject constructor(private val repository: Tra
             return ListingModel(
                 trackId = trackId,
                 artistName = artistName,
-                price = "$trackPrice $currency",
+                price = "${trackPrice ?: 0} $currency",
                 kind = kind,
                 primaryGenreName = primaryGenreName,
                 trackName = trackName,
