@@ -14,7 +14,11 @@ import com.alicimsamil.harmonyhub.databinding.ThirdScreenItemBinding
 import com.alicimsamil.harmonyhub.presentation.model.AdapterTypeEnum
 import com.alicimsamil.harmonyhub.presentation.model.ListingModel
 
-class TracksAdapter(diffCallback: NoteComparator) :
+interface InteractWithItem{
+    fun delete(id: Int)
+}
+
+class TracksAdapter(diffCallback: NoteComparator, val interactWithItem: InteractWithItem? = null) :
     PagingDataAdapter<ListingModel, RecyclerView.ViewHolder>(diffCallback) {
 
     var context: Context? = null
@@ -163,6 +167,11 @@ class TracksAdapter(diffCallback: NoteComparator) :
                     tvTrackPrice.text = it.price
                     context?.let {context->
                         ivTrackImage.loadUrl(it.image, context)
+                    }
+                    ivDelete.setOnClickListener {view->
+                        it.trackId?.let { id->
+                            interactWithItem?.delete(id)
+                        }
                     }
                 }
             }
