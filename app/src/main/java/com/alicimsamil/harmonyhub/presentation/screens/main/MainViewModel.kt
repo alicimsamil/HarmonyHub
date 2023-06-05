@@ -1,4 +1,4 @@
-package com.alicimsamil.harmonyhub.presentation.main
+package com.alicimsamil.harmonyhub.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
 import com.alicimsamil.harmonyhub.core.common.extensions.EMPTY
