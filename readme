@@ -1,5 +1,5 @@
 ## Architecture
-MVVM (Model-View-ViewModel) with Clean Architecture in this project. 
+MVVM (Model-View-ViewModel) with Clean Architecture principles in this project. 
 This architectural approach provides independence, scalability and testability
 by separating the different layers of the project.
 
