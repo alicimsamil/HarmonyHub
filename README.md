@@ -17,8 +17,8 @@ The project is divided into the following layers:
 
 ## Libraries
 - **Material Design** - UI design
-- **AndroidX** - ViewModel, LiveData, Splash Screen API, Paging3
-- **KotlinX** - Coroutines, Flow, StateFlow, Serialization
+- **AndroidX** - ViewModel, Splash Screen API, Paging3
+- **KotlinX** - Coroutines, Flow, StateFlow, Parcelization
 - **Hilt** -  Dependency Injection
 - **Navigation Component** - User navigation
 - **Glide** - Loading Images
